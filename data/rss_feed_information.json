@@ -1,0 +1,34 @@
+{
+  "rssFeedInfo": [
+    {
+		"id": "1",
+        "url": "http://feeds.feedblitz.com/LifeScriptWomensHealth",
+        "name": "Lifescript Featured Articles"
+    },
+    {
+		"id": "2",
+        "url": "http://feeds.feedblitz.com/Lifescript-HealthRSS", 
+        "name": "Health"
+    },
+    {
+		"id": "3",
+        "url": "http://feeds.feedblitz.com/Lifescript-HealthNews",
+        "name": "Health News-Reuters"
+    },
+    {
+		"id": "4",
+        "url": "http://feeds.feedblitz.com/Lifescript-HouseCalls",
+        "name": "House Calls"
+    },
+    {
+		"id": "5",
+        "url": "http://feeds.feedblitz.com/LifescriptHealthBistro",
+        "name": "Health Bistro Blog"
+    },
+    {
+		"id": "6",
+        "url": "https://gdata.youtube.com/feeds/api/users/lifescripttv/uploads?v=2&amp;alt=jsonc&amp;max-results=10",
+        "name": "Lifescript Youtube TV"
+    }
+  ]
+}

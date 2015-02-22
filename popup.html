@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html dir="ltr" ng-app="lifescriptApp" ng-csp>
+	<head>
+		<meta charset="UTF-8">
+		<title>Lifescript Feed</title>
+		<link rel="stylesheet" type="text/css" href="lifescriptRss.css" />
+		<script type="text/javascript" src="lib/jsapi.js"></script>
+	</head>
+	<body id="bodyId" ng-controller="mainController" ng-cloak>
+		<div class="clearfix">
+			
+			<div class="dropdown pull-left dropdown-container">
+				<lifescript-dropdown options="dropdownRssOptions" feed-info="rssContentInfos"></lifescript-dropdown>
+			</div>
+		
+			<!--<div class="dropdown pull-left dropdown-container">
+				<a href="#" class="dropdown-toggle dropdown-anchor" data-toggle="dropdown"><span class="dropdownText">{{dropdownNameSelected}}</span> <b class="caret"></b></a>
+				<ul id="rssFeedListing" class="dropdown-menu">
+					<li ng-repeat="dropdownRssOption in dropdownRssOptions">
+						<a id="{{dropdownRssOption.id}}" href="#" ng-click="openFeed(dropdownRssOption)"><span class="dropdownText">{{dropdownRssOption.name}}</span></a>
+					</li>
+		        </ul>
+		    </div>-->
+		     <div id="faqsImgId" class="pull-right settingImg" ng-click="openFaqs()">
+		    	<span class="glyphicon glyphicon-question-sign"></span>
+		    </div>
+		    <div id="settingImgId" class="pull-right settingImg" ng-click="openSettings()">
+		    	<span class="glyphicon glyphicon-wrench"></span>
+		    </div>
+		</div>
+		
+		<div ng-cloak id="lifescriptFeedRssDiv" class="clearfix" style="width: 600px;" ng-show="rssContentInfos != null">
+			<ol>
+				<li ng-repeat="rssContentInfo in rssContentInfos">
+					<div id="feedContainerId{{rssContentInfo.id}}">
+						<span>
+							<a href="javascript:;" class="feedLink" ng-click="openUrlLink(rssContentInfo.link)">{{rssContentInfo.title}}</a>
+							<span>{{formatDate(rssContentInfo.publishedDate) |  date:"MM/dd/yyyy" }}</span>
+						</span>
+					</div>
+				</li>
+			</ol>
+		</div>
+		
+		<div ng-cloak id="missingSiteRssDiv" class="clearfix" style="width: 600px;" ng-show="missingFeedInfos != null">
+			<ol>
+				<li ng-repeat="missingFeedInfo in missingFeedInfos">
+					<div id="feedContainerId{{missingFeedInfo.id}}">
+						<span>
+							<a id="feedId{{missingFeedInfo.id}}" class="feedLink" href="javascript:;" ng-click="openUrlLink(rssContentInfo.url)">{{missingFeedInfo.name}}</a>
+						</span>
+					</div>
+				</li>
+			</ol>
+		</div>
+		<div id="social-media-links" class="pull-right lifescript-social" ng-controller="socialController">
+			<div class="lifescript-facebook" ng-click="openSocial('https://www.facebook.com/lifescript.health')"></div>
+			<div class="lifescript-twitter" ng-click="openSocial('http://twitter.com/#!/Lifescript')"></div>
+			<div class="lifescript-pinterest" ng-click="openSocial('http://www.pinterest.com/lifescript')"></div>
+			<div class="lifescript-google-plus" ng-click="openSocial('https://plus.google.com/105012185945365180977')"></a></div>
+			<div class="lifescript-youtube" ng-click="openSocial('http://www.youtube.com/user/lifescripttv')"></a></div>
+			<div class="lifescript-ig" ng-click="openSocial('http://instagram.com/lifescript')"></a></div>
+			<div class="lifescript-blog" ng-click="openSocial('http://healthbistro.lifescript.com/')"></a></div>
+		</div>
+
+		<script type="text/javascript" src="lib/angular.js"></script>
+		<script type="text/javascript" src="lib/jquery.js"></script>
+		<script type="text/javascript" src="lib/bootstrap.js"></script>
+		<script type="text/javascript" src="js/app.js"></script>
+		<script type="text/javascript" src="js/directive/lifescriptDropdown.js"></script>
+		<script type="text/javascript" src="js/services/lifescriptService.js"></script>
+		<script type="text/javascript" src="js/services/feedService.js"></script>
+		<script type="text/javascript" src="js/controllers/socialController.js"></script>
+	</body>
+</html>

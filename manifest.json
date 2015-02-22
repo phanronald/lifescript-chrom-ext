@@ -1,0 +1,26 @@
+{
+  "name": "Lifescript RSS Feed",
+  "manifest_version": 2,
+  "description": "Lifescript Health News",
+  "version" : "0.9.5",
+  "browser_action": {
+    "default_icon": "lifescript.png",
+	"default_title": "Lifescript Feed",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+      "16": "lifescript16.png",
+      "32": "lifescript32.png",
+      "48": "lifescript48.png",
+      "128": "lifescript128.png"
+   },
+  "content_security_policy": "script-src 'self'; object-src 'self'",
+  "minimum_chrome_version": "38",
+  "options_page": "options.html",
+  "content_security_policy": "script-src 'self' https://www.google.com; object-src 'self'",
+  "permissions": [
+    "http://www.lifescript.com/",
+    "tabs",
+    "http://*.google.com/"
+  ]
+}
