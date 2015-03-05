@@ -1,0 +1,29 @@
+{
+  "activity_level": [
+    {
+		"id": "1",
+        "name": "Sedentary",
+		"value": "0.01398"
+    },
+    {
+		"id": "2",
+        "name": "Light Activity",
+		"value": "0.02332"
+    },
+    {
+		"id": "3",
+        "name": "Moderate Activity",
+		"value": "0.0327"
+    },
+    {
+		"id": "4",
+        "name": "Heavy Activity",
+		"value": "0.08077"
+    },
+    {
+		"id": "5",
+        "name": "Exceptional Activity",
+		"value": "0.10768"
+    }
+  ]
+}

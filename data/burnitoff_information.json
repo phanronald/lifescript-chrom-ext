@@ -1,0 +1,697 @@
+{
+  "foods": [
+    {
+		"id": "1",
+        "name": "Asian Chicken Salad",
+		"value": "714"
+    },
+	{
+		"id": "2",
+        "name": "Bagel and Egg",
+		"value": "430"
+    },
+	{
+		"id": "3",
+        "name": "Bran Muffin",
+		"value": "563"
+    },	
+	{
+		"id": "4",
+        "name": "Bread and Salad",
+		"value": "664"
+    },
+	{
+		"id": "5",
+        "name": "Broccoli Baked Potato",
+		"value": "499"
+    },
+	{
+		"id": "6",
+        "name": "Broiled Steak",
+		"value": "538"
+    },
+	{
+		"id": "7",
+        "name": "Cheese Lasagna",
+		"value": "473"
+    },
+	{
+		"id": "8",
+        "name": "Cheeseburger",
+		"value": "917"
+    },
+	{
+		"id": "9",
+        "name": "Chicken Taco",
+		"value": "425"
+    },
+	{
+		"id": "10",
+		"name": "Crackers",
+		"value": "156"
+	},
+	{
+		"id": "11",
+		"name": "Energy Bar Snack",
+		"value": "301"
+	},
+	{
+		"id": "12",
+		"name": "English Muffin",
+		"value": "331"
+	},
+	{
+		"id": "13",
+		"name": "Fajita Beef Salad",
+		"value": "398"
+	},
+	{
+		"id": "14",
+		"name": "Fettuccine Primavera",
+		"value": "457"
+	},
+	{
+		"id": "15",
+		"name": "Filet Mignon",
+		"value": "729"
+	},
+	{
+		"id": "16",
+		"name": "Fish",
+		"value": "440"
+	},
+	{
+		"id": "17",
+		"name": "Granola Bar",
+		"value": "164"
+	},
+	{
+		"id": "18",
+		"name": "Grilled Chicken Caesar Salad",
+		"value": "317"
+	},
+	{
+		"id": "19",
+		"name": "Grilled Vegetable Salad",
+		"value": "313"
+	},
+	{
+		"id": "20",
+		"name": "Hot Cocoa",
+		"value": "160"
+	},
+	{
+		"id": "21",
+		"name": "Ice-Cream Sandwich",
+		"value": "282"
+	},
+	{
+		"id": "22",
+		"name": "Mesquite Chicken",
+		"value": "469"
+	},
+	{
+		"id": "23",
+		"name": "Mixed Salad",
+		"value": "375"
+	},
+	{
+		"id": "24",
+		"name": "Nachos",
+		"value": "499"
+	},
+	{
+		"id": "25",
+		"name": "Oatmeal",
+		"value": "248"
+	},
+	{
+		"id": "26",
+		"name": "Popcorn",
+		"value": "330"
+	},
+	{
+		"id": "27",
+		"name": "Pretzels",
+		"value": "483"
+	},
+	{
+		"id": "28",
+		"name": "Quesadilla",
+		"value": "406"
+	},
+	{
+		"id": "29",
+		"name": "Raisin Bagel",
+		"value": "131"
+	},
+	{
+		"id": "30",
+		"name": "Roast Beef Sandwich",
+		"value": "491"
+	},
+	{
+		"id": "31",
+		"name": "Roast Chicken",
+		"value": "691"
+	},
+	{
+		"id": "32",
+		"name": "Scrambled Eggs",
+		"value": "383"
+	},
+	{
+		"id": "33",
+		"name": "Shrimp Jambalaya",
+		"value": "749"
+	},
+	{
+		"id": "34",
+		"name": "Soft Pretzel",
+		"value": "196"
+	},
+	{
+		"id": "35",
+		"name": "Spaghetti with Marinara Sauce",
+		"value": "532"
+	},
+	{
+		"id": "36",
+		"name": "Spinach Dip",
+		"value": "349"
+	},
+	{
+		"id": "37",
+		"name": "Split Pea Soup",
+		"value": "659"
+	},
+	{
+		"id": "38",
+		"name": "Steak and Rice",
+		"value": "660"
+	},
+	{
+		"id": "39",
+		"name": "Steak and Salad",
+		"value": "968"
+	},
+	{
+		"id": "40",
+		"name": "Steak and Spinach",
+		"value": "709"
+	},
+	{
+		"id": "41",
+		"name": "Strawberry Shortcake",
+		"value": "227"
+	},
+	{
+		"id": "42",
+		"name": "Swordfish - Grilled",
+		"value": "452"
+	},
+	{
+		"id": "43",
+		"name": "Teriyaki Chicken",
+		"value": "696"
+	},
+	{
+		"id": "44",
+		"name": "Tofu Stir Fry",
+		"value": "461"
+	},
+	{
+		"id": "45",
+		"name": "Tuna Casserole",
+		"value": "668"
+	},
+	{
+		"id": "46",
+		"name": "Tuna Melt",
+		"value": "444"
+	},
+	{
+		"id": "47",
+		"name": "Tuna Sandwich",
+		"value": "303"
+	},
+	{
+		"id": "48",
+		"name": "Tuna Wrap",
+		"value": "414"
+	},
+	{
+		"id": "49",
+		"name": "Turkey Burger",
+		"value": "737"
+	},
+	{
+		"id": "50",
+		"name": "Veggie Burger",
+		"value": "542"
+	},
+	{
+		"id": "51",
+		"name": "Veggie Pizza",
+		"value": "651"
+	},
+	{
+		"id": "52",
+		"name": "Watermelon Slice",
+		"value": "183"
+	},
+	{
+		"id": "53",
+		"name": "Yogurt Parfait",
+		"value": "424"
+	}
+  ],
+  "exercises": [
+    {
+		"id": "1",
+        "name": "Endurance Exercise",
+		"value": "Endurance"
+    },
+	{
+		"id": "2",
+		"name": "Gym Classes",
+		"value": "Gym"
+	},
+	{
+		"id": "3",
+		"name": "Sports",
+		"value": "Sports"
+	},
+	{
+		"id": "4",
+		"name": "Household/Recreation Activities",
+		"value": "Recreation"
+	}
+  ],
+  "exercise_types": [
+    {
+		"id": "1",
+        "name": "Bicycling",
+		"value": "4",
+		"parent": "1"
+    },{
+		"id": "2",
+        "name": "Bicycling under 10 mph",
+		"value": "4",
+		"parent": "1"
+    },{
+		"id": "3",
+        "name": "Bicycling  10-14 mph",
+		"value": "7",
+		"parent": "1"
+    },{
+		"id": "4",
+        "name": "Bicycling 14-19 mph",
+		"value": "10",
+		"parent": "1"
+    },{
+		"id": "5",
+        "name": "Cross Country Skiing",
+		"value": "10",
+		"parent": "1"
+    },{
+		"id": "6",
+        "name": "Elliptical Trainer",
+		"value": "5",
+		"parent": "1"
+    },{
+		"id": "7",
+        "name": "Exercise bike",
+		"value": "5",
+		"parent": "1"
+    },{
+		"id": "8",
+        "name": "Inline Skating",
+		"value": "5.5",
+		"parent": "1"
+    },{
+		"id": "9",
+        "name": "Jumping Rope",
+		"value": "9",
+		"parent": "1"
+    },{
+		"id": "10",
+        "name": "Kayak/Canoe/Rowing",
+		"value": "5",
+		"parent": "1"
+    },{
+		"id": "11",
+        "name": "Running 7 mph",
+		"value": "10",
+		"parent": "1"
+    },{
+		"id": "12",
+        "name": "Running 5.5 mph",
+		"value": "8",
+		"parent": "1"
+    },{
+		"id": "13",
+        "name": "Snowshoeing",
+		"value": "8",
+		"parent": "1"
+    },{
+		"id": "14",
+        "name": "Stair Climber",
+		"value": "6.5",
+		"parent": "1"
+    },{
+		"id": "15",
+        "name": "Swimming 25 yards/min",
+		"value": "6",
+		"parent": "1"
+    },{
+		"id": "16",
+        "name": "Swimming 50 yards/min",
+		"value": "8",
+		"parent": "1"
+    },{
+		"id": "17",
+        "name": "Walking 2 mph",
+		"value": "2.5",
+		"parent": "1"
+    },{
+		"id": "18",
+        "name": "Walking 3 mph",
+		"value": "3.5",
+		"parent": "1"
+    },
+	{
+		"id": "19",
+        "name": "Body Pump",
+		"value": "5.5",
+		"parent": "2"
+    },{
+		"id": "20",
+        "name": "Body Sculpting",
+		"value": "4",
+		"parent": "2"
+    },{
+		"id": "21",
+        "name": "Dance Aerobics",
+		"value": "5",
+		"parent": "2"
+    },{
+		"id": "22",
+        "name": "General",
+		"value": "6",
+		"parent": "2"
+    },{
+		"id": "23",
+        "name": "High Impact Aerobics",
+		"value": "6",
+		"parent": "2"
+    },{
+		"id": "24",
+        "name": "Kick Boxing",
+		"value": "9",
+		"parent": "2"
+    },{
+		"id": "25",
+        "name":"Low Impact Aerobics",
+		"value": "4",
+		"parent": "2"
+    },{
+		"id": "26",
+        "name": "Martial Arts",
+		"value": "5",
+		"parent": "2"
+    },{
+		"id": "27",
+        "name": "Power Board",
+		"value": "7",
+		"parent": "2"
+    },{
+		"id": "28",
+        "name": "Power Yoga",
+		"value": "5",
+		"parent": "2"
+    },{
+		"id": "29",
+        "name": "Spinning",
+		"value": "7",
+		"parent": "2"
+    },{
+		"id": "30",
+        "name": "Step Aerobics",
+		"value": "5",
+		"parent": "2"
+    },{
+		"id": "31",
+        "name": "Tae Bo",
+		"value": "9",
+		"parent": "2"
+    },
+	{
+		"id": "32",
+        "name": "Badminton",
+		"value": "5.5",
+		"parent": "3"
+    },{
+		"id": "33",
+        "name": "Baseball/Softball",
+		"value": "5",
+		"parent": "3"
+    },{
+		"id": "34",
+        "name": "Basketball",
+		"value": "6",
+		"parent": "3"
+    },{
+		"id": "35",
+        "name": "Diving",
+		"value": "13",
+		"parent": "3"
+    },{
+		"id": "36",
+        "name": "Dock/Boat Fishing",
+		"value": "3.5",
+		"parent": "3"
+    },{
+		"id": "37",
+        "name": "Field Hockey",
+		"value": "7.7",
+		"parent": "3"
+    },{
+		"id": "38",
+        "name": "Golf: Carrying clubs",
+		"value": "5.5",
+		"parent": "3"
+    },{
+		"id": "39",
+        "name": "Golf: Using cart",
+		"value": "3.5",
+		"parent": "3"
+    },{
+		"id": "40",
+        "name": "Handball",
+		"value": "10",
+		"parent": "3"
+    },{
+		"id": "41",
+        "name": "Horseback Riding",
+		"value": "4",
+		"parent": "3"
+    },{
+		"id": "42",
+        "name": "Ice Hockey",
+		"value": "7",
+		"parent": "3"
+    },{
+		"id": "43",
+        "name": "Ice Skating",
+		"value": "7",
+		"parent": "3"
+    },{
+		"id": "44",
+        "name": "Inline Hockey",
+		"value": "7",
+		"parent": "3"
+    },{
+		"id": "45",
+        "name": "Lacrosse",
+		"value": "7.6",
+		"parent": "3"
+    },{
+		"id": "46",
+        "name": "Racquetball",
+		"value": "10.3",
+		"parent": "3"
+    },{
+		"id": "47",
+        "name": "Rock Climbing",
+		"value": "8",
+		"parent": "3"
+    },{
+		"id": "48",
+        "name": "Skiing-Downhill",
+		"value": "7",
+		"parent": "3"
+    },{
+		"id": "49",
+        "name": "Snowboarding",
+		"value": "7",
+		"parent": "3"
+    },{
+		"id": "50",
+        "name": "Soccer",
+		"value": "7",
+		"parent": "3"
+    },{
+		"id": "51",
+        "name": "Squash",
+		"value": "12",
+		"parent": "3"
+    },{
+		"id": "52",
+        "name": "Surfing",
+		"value": "3",
+		"parent": "3"
+    },{
+		"id": "53",
+        "name": "Tennis-doubles",
+		"value": "6.5",
+		"parent": "3"
+    },{
+		"id": "54",
+        "name": "Tennis-singles",
+		"value": "7",
+		"parent": "3"
+    },{
+		"id": "55",
+        "name": "Ultimate Frisbee",
+		"value": "7",
+		"parent": "3"
+    },{
+		"id": "56",
+        "name": "Vacuuming/Carpet Sweeping",
+		"value": "2.6",
+		"parent": "3"
+    },{
+		"id": "57",
+        "name": "Volleyball-beach",
+		"value": "7",
+		"parent": "3"
+    },{
+		"id": "58",
+        "name": "Volleyball-recreation",
+		"value": "2.9",
+		"parent": "3"
+    },{
+		"id": "59",
+        "name": "Water Polo",
+		"value": "6.5",
+		"parent": "3"
+    },
+	{
+		"id": "60",
+        "name": "Billiards",
+		"value": "2.4",
+		"parent": "4"
+    },{
+		"id": "61",
+        "name": "Carpentry",
+		"value": "3",
+		"parent": "4"
+    },{
+		"id": "62",
+        "name": "Cleaning",
+		"value": "3.6",
+		"parent": "4"
+    },{
+		"id": "63",
+        "name": "Cooking",
+		"value": "2.6",
+		"parent": "4"
+    },{
+		"id": "64",
+        "name": "Croquet",
+		"value": "3.4",
+		"parent": "4"
+    },{
+		"id": "65",
+        "name": "Dancing",
+		"value": "4.5",
+		"parent": "4"
+    },{
+		"id": "66",
+        "name": "Dock/Boat Fishing",
+		"value": "3.5",
+		"parent": "4"
+    },{
+		"id": "67",
+        "name": "Fly Fishing",
+		"value": "6",
+		"parent": "4"
+    },{
+		"id": "68",
+        "name": "Frisbee Throwing",
+		"value": "3",
+		"parent": "4"
+    },{
+		"id": "69",
+        "name": "Gardening",
+		"value": "4",
+		"parent": "4"
+    },{
+		"id": "70",
+        "name": "Lawn Mowing (push mower)",
+		"value": "5",
+		"parent": "4"
+    },{
+		"id": "71",
+        "name": "Mopping",
+		"value": "3.6",
+		"parent": "4"
+    },{
+		"id": "72",
+        "name": "Painting",
+		"value": "2.9",
+		"parent": "4"
+    },{
+		"id": "73",
+        "name": "Scrubbing Floors",
+		"value": "6.3",
+		"parent": "4"
+    },{
+		"id": "74",
+        "name": "Shopping",
+		"value": "3.6",
+		"parent": "4"
+    },{
+		"id": "75",
+        "name": "Sledding",
+		"value": "7",
+		"parent": "4"
+    },{
+		"id": "76",
+        "name": "Stacking firewood",
+		"value": "5.1",
+		"parent": "4"
+    },{
+		"id": "77",
+        "name": "Standing",
+		"value": "2",
+		"parent": "4"
+    },{
+		"id": "78",
+        "name": "Watching TV/Sitting",
+		"value": "1.25",
+		"parent": "4"
+    },{
+		"id": "79",
+        "name": "Water Skiing",
+		"value": "6",
+		"parent": "4"
+    },{
+		"id": "80",
+        "name": "Weeding",
+		"value": "4.1",
+		"parent": "4"
+    }
+  ]
+}

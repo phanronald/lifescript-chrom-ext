@@ -1,0 +1,66 @@
+<div ng-form="healthCalculatorForm" ng-controller="totalHealthController" ng-cloak>
+	<div ng-cloak id="totalHealthCalcContainer" class="clearfix tools-container">
+		<div id="yourInfoContainer" class="total-health-calc-info pull-left">
+			<div>
+				<div id="genderContainer">
+					<span class="total-health-calc-span">Gender</span>
+					<input type="radio" ng-model="gender" value="m" required><span>Male</span>
+					<input type="radio" ng-model="gender" value="f" required><span>Female</span>
+				</div>
+			</div>
+			<div>
+				<div id="heightContainer">
+					<span class="total-health-calc-span">Height</span>
+					<select class="total-health-calc-dropdown-num" ng-model="selectedHeightFt" ng-options="heightInFt for heightInFt in heightFtRange = ([] | rangeFilter:2:7:true)" required></select>
+					<span>ft</span>
+					<select class="total-health-calc-dropdown-num" ng-model="selectedHeightInches" ng-options="heightInInches for heightInInches in heightInchesRange = ([] | rangeFilter:0:11:true)" required></select>
+					<span>in.</span>
+				</div>
+			</div>
+			<div class="pull-left">
+				<div id="weightAgeContainer" class="pull-left">
+					<span class="total-health-calc-span">Weight</span>
+					<select class="total-health-calc-dropdown-num" ng-model="selectedWeightLbs" ng-options="weightLbs for weightLbs in weightLbsRange = ([] | rangeFilter:85:399:false)" required></select>
+					<span>lbs</span>
+				</div>
+				<div  class="pull-left">
+					<span class="total-health-calc-span">Age</span>
+					<select class="total-health-calc-dropdown-num" ng-model="selectedAges" ng-options="agesPpl for agesPpl in agesPplRange = ([] | rangeFilter:13:99:false)" required></select>
+				</div>
+			</div>
+			<div class="pull-left">
+				<div id="hipsContainer" class="pull-left">
+					<span class="total-health-calc-span">Hips</span>
+					<select class="total-health-calc-dropdown-num" ng-model="selectedHips" ng-options="hips for hips in hipsRange = ([] | rangeFilter:1:150:false)" required></select>
+					<span style="padding-right: 4px;">in.</span>
+				</div>
+				<div id="waistContainer" class="pull-left">
+					<span class="total-health-calc-span">Waist</span>
+					<select class="total-health-calc-dropdown-num" ng-model="selectedWaist" ng-options="waist for waist in waistRange = ([] | rangeFilter:1:150:false)" required></select>
+				</div>	
+			</div>
+			<div class="clear-both">
+				<div id="rateHeartCotainer" class="pull-left">
+					<span class="total-health-calc-span">Rest Heart Rate</span>
+					<select class="total-health-calc-dropdown-num" ng-model="selectedHeartRate" ng-options="heartRate for heartRate in heartRateRange = ([] | rangeFilter:50:199:true)" required></select>
+					<span>bpm</span>
+				</div>
+				<div id="activityLevelContainer" class="pull-left">
+					<span class="total-health-calc-span" style="width: 101px">Activity Lvl</span>
+					<select class="total-health-calc-dropdown" ng-model="selectedActivityLevel" ng-options="activityLevel.name for activityLevel in activityLevels" required></select>
+				</div>
+			</div>	
+		</div>
+		<div class="total-health-calc-info clear-both">
+			<button id="calculateFitnessBtn" class="calculate-fitness-btn" ng-click="totalFitnessCalc()" ng-disabled="healthCalculatorForm.$invalid">Calculate</button>
+		</div>
+		<div class="clearfix total-health-calc-result" ng-show="showHealthResult">
+			<div><span class="total-health-calc-result-span">Target Heart Rate: </span><span class="tools-results">{{resultTargetHeartRate}}</span></div>
+			<div><span class="total-health-calc-result-span">Basal Metabolic Rate: </span><span class="tools-results">{{resultBMR}}</span></div>
+			<div><span class="total-health-calc-result-span">Body Mass Index: </span><span class="tools-results">{{resultBMI}}</span></div>
+			<div><span class="total-health-calc-result-span">Calorie Needs: </span><span class="tools-results">{{resultCaloriesNeed}}</span></div>
+			<div><span class="total-health-calc-result-span">Ideal Body Weight: </span><span class="tools-results">{{resultIdealBodyWeight}}</span></div>
+			<div><span class="total-health-calc-result-span">Waist-to-Hip-Ratio: </span><span class="tools-results">{{resultWaistToHip}}</span></div>
+		</div>
+	</div>
+</div>

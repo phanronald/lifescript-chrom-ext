@@ -2,7 +2,7 @@
   "name": "Lifescript RSS Feed",
   "manifest_version": 2,
   "description": "Lifescript Health News",
-  "version" : "0.9.5",
+  "version" : "1.0",
   "browser_action": {
     "default_icon": "lifescript.png",
 	"default_title": "Lifescript Feed",

@@ -1,10 +1,12 @@
 google.load("feeds", "1");
 
-var lifescriptApp = angular.module("lifescriptApp", []);
+var lifescriptApp = angular.module("lifescriptApp", ['ui.bootstrap']);
 
 (function() {
-	var mainController = function($scope, $timeout, lifescriptService, feedService) {	
-	
+	var mainController = function($scope, lifescriptService, feedService) {	
+		$scope.templateBurnItOff = "templates/burnItOff.html";
+		$scope.templateTotalHealth = "templates/totalHealthCalc.html";
+		
 		feedService.retrieveJsonFromFile("data/rss_feed_information.json").then(function(data) {
 			$scope.dropdownRssOptions = data.rssFeedInfo;
 		});
@@ -15,6 +17,10 @@ var lifescriptApp = angular.module("lifescriptApp", []);
 				return dateOut;
 			}
 			return "";
+		};
+		
+		$scope.selectExerciseByType = function(selectedExercise) {
+			$scope.testType = selectedExercise;
 		};
 		
 		$scope.openUrlLink = function(url) {
@@ -30,5 +36,5 @@ var lifescriptApp = angular.module("lifescriptApp", []);
 		};
 	};
 	
-	lifescriptApp.controller("mainController", ['$scope', '$timeout', 'lifescriptService', 'feedService', mainController]);
+	lifescriptApp.controller("mainController", ['$scope', 'lifescriptService', 'feedService', mainController]);
 })();
