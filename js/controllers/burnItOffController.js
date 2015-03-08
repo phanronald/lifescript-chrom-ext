@@ -1,20 +1,21 @@
 (function() {
-	var burnItOffController = function($scope, feedService) {
+	var burnItOffController = function(feedService) {
+		var burnItOffVM = this;
 
 		feedService.retrieveJsonFromFile("data/burnitoff_information.json").then(function(data) {
-			$scope.burnitoff = data;
-			$scope.exercise = data;
+			burnItOffVM.burnitoff = data;
+			burnItOffVM.exercise = data;
 		});
 		
-		$scope.burnItOffError = null;
-		$scope.minutesToBurnOffFood = null;
+		burnItOffVM.burnItOffError = null;
+		burnItOffVM.minutesToBurnOffFood = null;
 	
-		$scope.burnItOffCalc = function() {			
-			var calories = $scope.selectedFood.value;
-			var metabolicEquivalentTask = $scope.selectedExerciseType.value;
+		burnItOffVM.burnItOffCalc = function() {			
+			var calories = burnItOffVM.selectedFood.value;
+			var metabolicEquivalentTask = burnItOffVM.selectedExerciseType.value;
 			
-			$scope.minutesToBurnOffFood = Math.round(calories / (metabolicEquivalentTask * 3.5 * ($scope.selectedWeight / 2.2) / 200) * 10) / 10 + " minutes of " +
-				$scope.selectedExerciseType.name + " will burn off an " + $scope.selectedFood.name;
+			burnItOffVM.minutesToBurnOffFood = Math.round(calories / (metabolicEquivalentTask * 3.5 * (burnItOffVM.selectedWeight / 2.2) / 200) * 10) / 10 + " minutes of " +
+				burnItOffVM.selectedExerciseType.name + " will burn off an " + burnItOffVM.selectedFood.name;
 		};
 	};
 	
@@ -36,6 +37,6 @@
 		};
 	};
 
-	lifescriptApp.controller("burnItOffController", ['$scope', 'feedService', burnItOffController]);
+	lifescriptApp.controller("burnItOffController", ['feedService', burnItOffController]);
 	lifescriptApp.filter("foodExerciseFilter", [foodExerciseTypeFilter]);
 })();

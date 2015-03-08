@@ -3,15 +3,18 @@ google.load("feeds", "1");
 var lifescriptApp = angular.module("lifescriptApp", ['ui.bootstrap']);
 
 (function() {
-	var mainController = function($scope, lifescriptService, feedService) {	
-		$scope.templateBurnItOff = "templates/burnItOff.html";
-		$scope.templateTotalHealth = "templates/totalHealthCalc.html";
+	var mainController = function(lifescriptService, feedService) {
+		
+		var mainCtrlVM = this;
+		
+		mainCtrlVM.templateBurnItOff = "templates/burnItOff.html";
+		mainCtrlVM.templateTotalHealth = "templates/totalHealthCalc.html";
 		
 		feedService.retrieveJsonFromFile("data/rss_feed_information.json").then(function(data) {
-			$scope.dropdownRssOptions = data.rssFeedInfo;
+			mainCtrlVM.dropdownRssOptions = data.rssFeedInfo;
 		});
 		
-		$scope.formatDate = function(date){
+		mainCtrlVM.formatDate = function(date){
 			if(localStorage.getItem("show_publication_date") === null) {
 				var dateOut = new Date(date);
 				return dateOut;
@@ -19,22 +22,18 @@ var lifescriptApp = angular.module("lifescriptApp", ['ui.bootstrap']);
 			return "";
 		};
 		
-		$scope.selectExerciseByType = function(selectedExercise) {
-			$scope.testType = selectedExercise;
-		};
-		
-		$scope.openUrlLink = function(url) {
+		mainCtrlVM.openUrlLink = function(url) {
 			lifescriptService.openUrlLink(url);
 		};
 		
-		$scope.openSettings = function() {
+		mainCtrlVM.openSettings = function() {
 			lifescriptService.openSettings();
 		};
 		
-		$scope.openFaqs = function() {
+		mainCtrlVM.openFaqs = function() {
 			lifescriptService.openFaqs();
 		};
 	};
 	
-	lifescriptApp.controller("mainController", ['$scope', 'lifescriptService', 'feedService', mainController]);
+	lifescriptApp.controller("mainController", ['lifescriptService', 'feedService', mainController]);
 })();

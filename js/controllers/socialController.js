@@ -1,9 +1,10 @@
 (function() {
-	var socialController = function($scope) {		
-		$scope.openSocial = function(socialLink) {
+	var socialController = function() {
+		var socialVM = this;
+		socialVM.openSocial = function(socialLink) {
 			chrome.tabs.create({url: socialLink});
 		};
 	};
 	
-	lifescriptApp.controller("socialController", ['$scope', socialController]);
+	lifescriptApp.controller("socialController", [socialController]);
 })();

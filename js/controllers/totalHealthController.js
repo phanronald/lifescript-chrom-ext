@@ -1,13 +1,15 @@
 (function() {
-	var totalHealthController = function($scope, feedService) {
+	var totalHealthController = function(feedService) {
+		
+		var totalHealthVM = this;
 		
 		feedService.retrieveJsonFromFile("data/activity_level.json").then(function(data) {
-			$scope.activityLevels = data.activity_level;
+			totalHealthVM.activityLevels = data.activity_level;
 		});
 		
-		$scope.totalFitnessCalc = function() {
-			$scope.resultTargetHeartRate = calcTargetHeartRate();
-			$scope.resultBMR = calcBasalMetabolicRate() + " calories burned per day";
+		totalHealthVM.totalFitnessCalc = function() {
+			totalHealthVM.resultTargetHeartRate = calcTargetHeartRate();
+			totalHealthVM.resultBMR = calcBasalMetabolicRate() + " calories burned per day";
 			
 			var bmiValue = calcBMI();
 			var resultText = "";
@@ -23,50 +25,50 @@
 			else if(bmiValue >= 30) {
 				resultText = " (obesity)";
 			}
-			$scope.resultBMI = bmiValue + resultText;
+			totalHealthVM.resultBMI = bmiValue + resultText;
 			
-			$scope.resultCaloriesNeed = calcCaloriesNeedBurn() + " calories per day";
-			$scope.resultIdealBodyWeight = calcIdealBodyWeight(true) + " pounds (" + calcIdealBodyWeight(false) + " kg)";
+			totalHealthVM.resultCaloriesNeed = calcCaloriesNeedBurn() + " calories per day";
+			totalHealthVM.resultIdealBodyWeight = calcIdealBodyWeight(true) + " pounds (" + calcIdealBodyWeight(false) + " kg)";
 			
 			var waistToHipValue = calcWaistToHipRation();
-			$scope.resultWaistToHip = waistToHipValue + (waistToHipValue > 0.80 ? " (apple shape)" : " (pear shape)");
-			$scope.showHealthResult = true;
+			totalHealthVM.resultWaistToHip = waistToHipValue + (waistToHipValue > 0.80 ? " (apple shape)" : " (pear shape)");
+			totalHealthVM.showHealthResult = true;
 		};
 		
 		var calcTargetHeartRate = function() {		
-			var main_heart = 220 - $scope.selectedAges - $scope.selectedHeartRate;	
-			var min_intensity = Math.round((main_heart * 0.6) + $scope.selectedHeartRate);
-			var max_intensity = Math.round((main_heart * 0.7) + $scope.selectedHeartRate);		
+			var main_heart = 220 - totalHealthVM.selectedAges - totalHealthVM.selectedHeartRate;	
+			var min_intensity = Math.round((main_heart * 0.6) + totalHealthVM.selectedHeartRate);
+			var max_intensity = Math.round((main_heart * 0.7) + totalHealthVM.selectedHeartRate);		
 			return min_intensity + " to " + max_intensity + " beats per minute";
 		};
 		
 		var calcBasalMetabolicRate = function() {
-			var weightInKg = $scope.selectedWeightLbs / 2.2;
-            var heightInCm = (($scope.selectedHeightFt * 12) + $scope.selectedHeightInches) * 2.54;
+			var weightInKg = totalHealthVM.selectedWeightLbs / 2.2;
+            var heightInCm = ((totalHealthVM.selectedHeightFt * 12) + totalHealthVM.selectedHeightInches) * 2.54;
             var BMRFactor = 0.0;
-            if ($scope.gender == "f") {
-                BMRFactor = 655 + (9.6 * weightInKg) + (1.8 * heightInCm) - (4.7 * $scope.selectedAges);
+            if (totalHealthVM.gender == "f") {
+                BMRFactor = 655 + (9.6 * weightInKg) + (1.8 * heightInCm) - (4.7 * totalHealthVM.selectedAges);
 			}
             else {
-                BMRFactor = 66 + (13.7 * weightInKg) + (5 * heightInCm) - (6.8 * $scope.selectedAges);
+                BMRFactor = 66 + (13.7 * weightInKg) + (5 * heightInCm) - (6.8 * totalHealthVM.selectedAges);
 			}
 			
             return Math.round(BMRFactor);
 		};
 		
 		var calcBMI = function() {
-			var heightInInches = (($scope.selectedHeightFt * 12) + $scope.selectedHeightInches);
-			return Math.round($scope.selectedWeightLbs * 703 * 10 / heightInInches / heightInInches / 10);
+			var heightInInches = ((totalHealthVM.selectedHeightFt * 12) + totalHealthVM.selectedHeightInches);
+			return Math.round(totalHealthVM.selectedWeightLbs * 703 * 10 / heightInInches / heightInInches / 10);
 		};
 		
 		var calcCaloriesNeedBurn = function() {
-			var weightInKg = $scope.selectedWeightLbs / 2.2;
-            var heightInCm = (($scope.selectedHeightFt * 12) + $scope.selectedHeightInches) * 2.54;
-            var BMRFactor = ($scope.gender == "f" ? 1.0 : 0.9);
+			var weightInKg = totalHealthVM.selectedWeightLbs / 2.2;
+            var heightInCm = ((totalHealthVM.selectedHeightFt * 12) + totalHealthVM.selectedHeightInches) * 2.54;
+            var BMRFactor = (totalHealthVM.gender == "f" ? 1.0 : 0.9);
             var BMR = ((9.99 * weightInKg) + (6.25 * heightInCm) + (166 * BMRFactor)) - 161;
             var energyNeeded = 0.0;
-			var isMale = $scope.gender == "m" ? true : false;
-			switch ($scope.selectedActivityLevel.id)
+			var isMale = totalHealthVM.gender == "m" ? true : false;
+			switch (totalHealthVM.selectedActivityLevel.id)
 			{
 				case 1:
 					energyNeeded = Math.round(weightInKg * (isMale ? 31 : 30));
@@ -92,16 +94,16 @@
 		
 		var calcIdealBodyWeight = function(isLbs) {
 			var heightOverFiveFeet = 0;
-			var heightInInches = (($scope.selectedHeightFt * 12) + $scope.selectedHeightInches);
+			var heightInInches = ((totalHealthVM.selectedHeightFt * 12) + totalHealthVM.selectedHeightInches);
             if (heightInInches > 60) {
                 heightOverFiveFeet = heightInInches - 60;
 			}
 			
-            return Math.round((2.3 * heightOverFiveFeet) + ($scope.gender == "f" ? 45.5 : 50) * (isLbs ? 2.2 : 1));
+            return Math.round((2.3 * heightOverFiveFeet) + (totalHealthVM.gender == "f" ? 45.5 : 50) * (isLbs ? 2.2 : 1));
 		};
 		
 		var calcWaistToHipRation = function() {
-			return Math.round(($scope.selectedWaist / $scope.selectedHips));
+			return Math.round((totalHealthVM.selectedWaist / totalHealthVM.selectedHips));
 		};
 	};
 	
@@ -116,6 +118,6 @@
 		};
 	};
 		
-	lifescriptApp.controller("totalHealthController", ['$scope', 'feedService', totalHealthController]);
+	lifescriptApp.controller("totalHealthController", ['feedService', totalHealthController]);
 	lifescriptApp.filter("rangeFilter", [rangeFilter]);
 })();

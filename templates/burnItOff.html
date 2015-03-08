@@ -1,39 +1,39 @@
-<div ng-form="burnItOffForm" ng-controller="burnItOffController" novalidate ng-cloak>
+<div ng-form="burnItOffForm" ng-controller="burnItOffController as burnIt" novalidate ng-cloak>
 	<div ng-cloak id="lifescriptBurnItOffFoodContainer" class="clearfix tools-container">
 		<span class="text-right burn-it-off-span">Select Food: </span>
-		<select class="burn-it-off-dropdown" name="burnItOffFood" ng-model="selectedFood" ng-options="food.name for food in burnitoff.foods" required></select>
+		<select class="burn-it-off-dropdown" name="burnItOffFood" ng-model="burnIt.selectedFood" ng-options="food.name for food in burnIt.burnitoff.foods" required></select>
 		<span ng-show="burnItOffForm.burnItOffFood.$dirty && burnItOffForm.burnItOffFood.$invalid">
 			<span ng-show="burnItOffForm.burnItOffFood.$error.required">Please choose a food.</span>
 		</span>
 	</div>
 	<div ng-cloak id="lifescriptBurnItOffExerciseContainer" class="clearfix" style="width: 600px;">
 		<span class="text-right burn-it-off-span">Select Exercise: </span>
-		<select class="burn-it-off-dropdown" name="burnItOffExercise" ng-model="selectedExercise" ng-options="exercise.name for exercise in burnitoff.exercises" ng-change="selectExerciseByType(selectedExercise)" required></select>
+		<select class="burn-it-off-dropdown" name="burnItOffExercise" ng-model="burnIt.selectedExercise" ng-options="exercise.name for exercise in burnIt.burnitoff.exercises" ng-change="selectExerciseByType(selectedExercise)" required></select>
 		<span ng-show="burnItOffForm.burnItOffExercise.$dirty && burnItOffForm.burnItOffExercise.$invalid">
 			<span ng-show="burnItOffForm.burnItOffExercise.$error.required">Please choose an exercise.</span>
 		</span>
 	</div>
 	<div ng-cloak id="lifescriptBurnItOffExerciseTypeContainer" class="clearfix" style="width: 600px;">
 		<span class="text-right burn-it-off-span">Select Exercise Type: </span>
-		<select class="burn-it-off-dropdown" name="burnItOffExerciseType" ng-model="selectedExerciseType" ng-options="exerciseType.name for exerciseType in filtered = (burnitoff.exercise_types | foodExerciseFilter:selectedExercise)" required></select>
+		<select class="burn-it-off-dropdown" name="burnItOffExerciseType" ng-model="burnIt.selectedExerciseType" ng-options="exerciseType.name for exerciseType in filtered = (burnIt.burnitoff.exercise_types | foodExerciseFilter:selectedExercise)" required></select>
 		<span ng-show="burnItOffForm.burnItOffExerciseType.$dirty && burnItOffForm.burnItOffExerciseType.$invalid">
 			<span ng-show="burnItOffForm.burnItOffExerciseType.$error.required">Please choose an exercise type.</span>
 		</span>
 	</div>
 	<div ng-cloak id="lifescriptBurnItOffWeight" class="clearfix" style="width: 600px;" >
 		<span class="text-right burn-it-off-span">Weight: </span>
-		<input type="text" ng-model="selectedWeight" name="burnItOffWeight" required />
+		<input type="text" ng-model="burnIt.selectedWeight" name="burnItOffWeight" required />
 		<span ng-show="burnItOffForm.burnItOffWeight.$dirty && burnItOffForm.burnItOffWeight.$invalid">
 			<span ng-show="burnItOffForm.burnItOffWeight.$error.required">Please enter in a weight.</span>
 		</span>
 	</div>
 	<div class="burn-it-off-btn-container">
-		<button id="burnItOffBtn" class="burn-it-off-btn" ng-click="burnItOffCalc()" ng-disabled="burnItOffForm.$invalid">Burn It!</button>
+		<button id="burnItOffBtn" class="burn-it-off-btn" ng-click="burnIt.burnItOffCalc()" ng-disabled="burnItOffForm.$invalid">Burn It!</button>
 	</div>
 	
 	<div class="burn-it-off-error-result">
-		<div class="clearfix tools-results" ng-show="minutesToBurnOffFood != null">
-			{{minutesToBurnOffFood}}
+		<div class="clearfix tools-results" ng-show="burnIt.minutesToBurnOffFood != null">
+			{{burnIt.minutesToBurnOffFood}}
 		</div>
 	</div>
 </div>

@@ -1,22 +1,12 @@
-(function() {
-	
-	var lifescriptDropdown = function(feedService) {
-		return {
-			restrict: 'AE',
-			scope: {
-			  lsOptions: '=options',
-			  feedInfo: '='
-			},
-			templateUrl: 'templates/lsSelect.html',
-			link: function($scope, $element, $attrs) {                                       
-				$scope.openSelectFeed = function(dropdownRssOption) {
-					feedService.retrieveFeed(dropdownRssOption.url).then(function(data) {
-						$scope.feedInfo = data.feed.entries;
-					});
-				}
-            }
+(function() {	
+	var LifeScriptDropdownCtrl = function(feedService) {
+		var lifescriptDdlVM = this;
+		lifescriptDdlVM.openSelectFeed = function(dropdownRssOption) {
+			feedService.retrieveFeed(dropdownRssOption.url).then(function(data) {
+				lifescriptDdlVM.rssFeedInfo = data.feed.entries;
+			});
 		};
 	};
 	
-	lifescriptApp.directive("lifescriptDropdown", ['feedService', lifescriptDropdown]);
+	lifescriptApp.controller('LifeScriptDropdownCtrl', ['feedService', LifeScriptDropdownCtrl]);
 })();

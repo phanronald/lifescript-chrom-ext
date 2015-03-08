@@ -7,50 +7,52 @@
 		<link rel="stylesheet" type="text/css" href="lifescriptRss.css" />
 		<script type="text/javascript" src="lib/jsapi.js"></script>
 	</head>
-	<body id="bodyId" ng-controller="mainController" ng-cloak>	
+	<body id="bodyId" ng-controller="mainController as mainCtrl" ng-cloak>	
 		<tabset>
 			<tab heading="RSS Feed">
-				<div class="clearfix tools-container">
+				<div ng-controller="LifeScriptDropdownCtrl as lsddlctrl">
+					<div class="clearfix tools-container">
+						
+						<div class="dropdown pull-left dropdown-container">
+							<select ng-model="selectedFeed" ng-options="dropdownRssOption.name for dropdownRssOption in mainCtrl.dropdownRssOptions" ng-change="lsddlctrl.openSelectFeed(selectedFeed)"></select>
+						</div>
+						 <div id="faqsImgId" class="pull-right settingImg" ng-click="mainCtrl.openFaqs()">
+							<span class="glyphicon glyphicon-question-sign"></span>
+						</div>
+						<div id="settingImgId" class="pull-right settingImg" ng-click="mainCtrl.openSettings()">
+							<span class="glyphicon glyphicon-wrench"></span>
+						</div>
+					</div>
 					
-					<div class="dropdown pull-left dropdown-container">
-						<lifescript-dropdown options="dropdownRssOptions" feed-info="rssContentInfos"></lifescript-dropdown>
+					<div ng-cloak id="lifescriptFeedRssDiv" class="clearfix" style="width: 600px;">
+						<ol>
+							<li ng-repeat="rssContentInfo in lsddlctrl.rssFeedInfo">
+								<div id="feedContainerId{{rssContentInfo.id}}">
+									<span>
+										<a href="javascript:;" class="feedLink" ng-click="mainCtrl.openUrlLink(rssContentInfo.link)">{{rssContentInfo.title}}</a>
+										<span>{{mainCtrl.formatDate(rssContentInfo.publishedDate) |  date:"MM/dd/yyyy" }}</span>
+									</span>
+								</div>
+							</li>
+						</ol>
 					</div>
-					 <div id="faqsImgId" class="pull-right settingImg" ng-click="openFaqs()">
-						<span class="glyphicon glyphicon-question-sign"></span>
-					</div>
-					<div id="settingImgId" class="pull-right settingImg" ng-click="openSettings()">
-						<span class="glyphicon glyphicon-wrench"></span>
-					</div>
-				</div>
-				
-				<div ng-cloak id="lifescriptFeedRssDiv" class="clearfix" style="width: 600px;">
-					<ol>
-						<li ng-repeat="rssContentInfo in rssContentInfos">
-							<div id="feedContainerId{{rssContentInfo.id}}">
-								<span>
-									<a href="javascript:;" class="feedLink" ng-click="openUrlLink(rssContentInfo.link)">{{rssContentInfo.title}}</a>
-									<span>{{formatDate(rssContentInfo.publishedDate) |  date:"MM/dd/yyyy" }}</span>
-								</span>
-							</div>
-						</li>
-					</ol>
 				</div>
 			</tab>
 			<tab heading="Burn It Off">
-				<div ng-include="templateBurnItOff"></div>
+				<div ng-include="mainCtrl.templateBurnItOff"></div>
 			</tab>
 			<tab heading="Total Health Calculator">
-				<div ng-include="templateTotalHealth"></div>
+				<div ng-include="mainCtrl.templateTotalHealth"></div>
 			</tab>
 		</tabset>
-		<div id="social-media-links" class="pull-right lifescript-social" ng-controller="socialController">
-			<div class="lifescript-facebook" ng-click="openSocial('https://www.facebook.com/lifescript.health')"></div>
-			<div class="lifescript-twitter" ng-click="openSocial('http://twitter.com/#!/Lifescript')"></div>
-			<div class="lifescript-pinterest" ng-click="openSocial('http://www.pinterest.com/lifescript')"></div>
-			<div class="lifescript-google-plus" ng-click="openSocial('https://plus.google.com/105012185945365180977')"></a></div>
-			<div class="lifescript-youtube" ng-click="openSocial('http://www.youtube.com/user/lifescripttv')"></a></div>
-			<div class="lifescript-ig" ng-click="openSocial('http://instagram.com/lifescript')"></a></div>
-			<div class="lifescript-blog" ng-click="openSocial('http://healthbistro.lifescript.com/')"></a></div>
+		<div id="social-media-links" class="pull-right lifescript-social" ng-controller="socialController as social">
+			<div class="lifescript-facebook" ng-click="social.openSocial('https://www.facebook.com/lifescript.health')"></div>
+			<div class="lifescript-twitter" ng-click="social.openSocial('http://twitter.com/#!/Lifescript')"></div>
+			<div class="lifescript-pinterest" ng-click="social.openSocial('http://www.pinterest.com/lifescript')"></div>
+			<div class="lifescript-google-plus" ng-click="social.openSocial('https://plus.google.com/105012185945365180977')"></a></div>
+			<div class="lifescript-youtube" ng-click="social.openSocial('http://www.youtube.com/user/lifescripttv')"></a></div>
+			<div class="lifescript-ig" ng-click="social.openSocial('http://instagram.com/lifescript')"></a></div>
+			<div class="lifescript-blog" ng-click="social.openSocial('http://healthbistro.lifescript.com/')"></a></div>
 		</div>
 
 		<script type="text/javascript" src="lib/angular.js"></script>
