@@ -37,5 +37,5 @@
 		
 	};
 	
-	lifescriptApp.factory("lifescriptService", ['$http', lifescriptService]);
+	serviceModule.service("lifescriptService", ['$http', lifescriptService]);
 })();

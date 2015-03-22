@@ -1,4 +1,14 @@
-(function() {
+(function() {	
+	var totalHealthDirective = function(feedService) {
+		 return {
+			  scope: {},
+			  templateUrl: 'templates/totalHealthCalc.html',
+			  replace: true,
+			  controller: 'totalHealthController',
+			  controllerAs: 'healthCalc'
+		};
+	};
+	
 	var totalHealthController = function(feedService) {
 		
 		var totalHealthVM = this;
@@ -117,7 +127,8 @@
 			return input;
 		};
 	};
-		
-	lifescriptApp.controller("totalHealthController", ['feedService', totalHealthController]);
-	lifescriptApp.filter("rangeFilter", [rangeFilter]);
+
+	directiveModule.directive('totalHealthDirective', [totalHealthDirective]);
+	controllerModule.controller("totalHealthController", ['feedService', totalHealthController]);
+	filterModule.filter("rangeFilter", [rangeFilter]);
 })();

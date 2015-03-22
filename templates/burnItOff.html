@@ -1,4 +1,4 @@
-<div ng-form="burnItOffForm" ng-controller="burnItOffController as burnIt" novalidate ng-cloak>
+<div ng-form="burnItOffForm" novalidate ng-cloak>
 	<div ng-cloak id="lifescriptBurnItOffFoodContainer" class="clearfix tools-container">
 		<span class="text-right burn-it-off-span">Select Food: </span>
 		<select class="burn-it-off-dropdown" name="burnItOffFood" ng-model="burnIt.selectedFood" ng-options="food.name for food in burnIt.burnitoff.foods" required></select>
@@ -8,7 +8,7 @@
 	</div>
 	<div ng-cloak id="lifescriptBurnItOffExerciseContainer" class="clearfix" style="width: 600px;">
 		<span class="text-right burn-it-off-span">Select Exercise: </span>
-		<select class="burn-it-off-dropdown" name="burnItOffExercise" ng-model="burnIt.selectedExercise" ng-options="exercise.name for exercise in burnIt.burnitoff.exercises" ng-change="selectExerciseByType(selectedExercise)" required></select>
+		<select class="burn-it-off-dropdown" name="burnItOffExercise" ng-model="burnIt.selectedExercise" ng-options="exercise.name for exercise in burnIt.burnitoff.exercises" required></select>
 		<span ng-show="burnItOffForm.burnItOffExercise.$dirty && burnItOffForm.burnItOffExercise.$invalid">
 			<span ng-show="burnItOffForm.burnItOffExercise.$error.required">Please choose an exercise.</span>
 		</span>

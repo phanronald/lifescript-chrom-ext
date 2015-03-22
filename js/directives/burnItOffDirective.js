@@ -1,4 +1,14 @@
-(function() {
+(function() {	
+	var burnItOffDirective = function(feedService) {
+		 return {
+			  scope: {},
+			  templateUrl: 'templates/burnItOff.html',
+			  replace: true,
+			  controller: 'burnItOffController',
+			  controllerAs: 'burnIt'
+		};
+	};
+	
 	var burnItOffController = function(feedService) {
 		var burnItOffVM = this;
 
@@ -37,6 +47,7 @@
 		};
 	};
 
-	lifescriptApp.controller("burnItOffController", ['feedService', burnItOffController]);
-	lifescriptApp.filter("foodExerciseFilter", [foodExerciseTypeFilter]);
+	directiveModule.directive('burnItOffDirective', [burnItOffDirective]);
+	controllerModule.controller("burnItOffController", ['feedService', burnItOffController]);
+	filterModule.filter("foodExerciseFilter", [foodExerciseTypeFilter]);	
 })();

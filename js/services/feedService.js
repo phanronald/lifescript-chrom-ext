@@ -27,5 +27,5 @@
 		
 	};
 	
-	lifescriptApp.factory("feedService", ['$http', '$q', '$rootScope', feedService]);
+	serviceModule.service("feedService", ['$http', '$q', '$rootScope', feedService]);
 })();

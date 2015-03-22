@@ -8,61 +8,35 @@
 		<script type="text/javascript" src="lib/jsapi.js"></script>
 	</head>
 	<body id="bodyId" ng-controller="mainController as mainCtrl" ng-cloak>	
+		<div class="clearfix tools-container">
+			 <div id="faqsImgId" class="pull-right settingImg" ng-click="mainCtrl.openFaqs()">
+				<span class="glyphicon glyphicon-question-sign"></span>
+			</div>
+			<div id="settingImgId" class="pull-right settingImg" ng-click="mainCtrl.openSettings()">
+				<span class="glyphicon glyphicon-wrench"></span>
+			</div>
+		</div>
 		<tabset>
 			<tab heading="RSS Feed">
-				<div ng-controller="LifeScriptDropdownCtrl as lsddlctrl">
-					<div class="clearfix tools-container">
-						
-						<div class="dropdown pull-left dropdown-container">
-							<select ng-model="selectedFeed" ng-options="dropdownRssOption.name for dropdownRssOption in mainCtrl.dropdownRssOptions" ng-change="lsddlctrl.openSelectFeed(selectedFeed)"></select>
-						</div>
-						 <div id="faqsImgId" class="pull-right settingImg" ng-click="mainCtrl.openFaqs()">
-							<span class="glyphicon glyphicon-question-sign"></span>
-						</div>
-						<div id="settingImgId" class="pull-right settingImg" ng-click="mainCtrl.openSettings()">
-							<span class="glyphicon glyphicon-wrench"></span>
-						</div>
-					</div>
-					
-					<div ng-cloak id="lifescriptFeedRssDiv" class="clearfix" style="width: 600px;">
-						<ol>
-							<li ng-repeat="rssContentInfo in lsddlctrl.rssFeedInfo">
-								<div id="feedContainerId{{rssContentInfo.id}}">
-									<span>
-										<a href="javascript:;" class="feedLink" ng-click="mainCtrl.openUrlLink(rssContentInfo.link)">{{rssContentInfo.title}}</a>
-										<span>{{mainCtrl.formatDate(rssContentInfo.publishedDate) |  date:"MM/dd/yyyy" }}</span>
-									</span>
-								</div>
-							</li>
-						</ol>
-					</div>
-				</div>
+				<rss-directive></rss-directive>
 			</tab>
 			<tab heading="Burn It Off">
-				<div ng-include="mainCtrl.templateBurnItOff"></div>
+				<burn-it-off-directive></burn-it-off-directive>
 			</tab>
 			<tab heading="Total Health Calculator">
-				<div ng-include="mainCtrl.templateTotalHealth"></div>
+				<total-health-directive></total-health-directive>
 			</tab>
 		</tabset>
-		<div id="social-media-links" class="pull-right lifescript-social" ng-controller="socialController as social">
-			<div class="lifescript-facebook" ng-click="social.openSocial('https://www.facebook.com/lifescript.health')"></div>
-			<div class="lifescript-twitter" ng-click="social.openSocial('http://twitter.com/#!/Lifescript')"></div>
-			<div class="lifescript-pinterest" ng-click="social.openSocial('http://www.pinterest.com/lifescript')"></div>
-			<div class="lifescript-google-plus" ng-click="social.openSocial('https://plus.google.com/105012185945365180977')"></a></div>
-			<div class="lifescript-youtube" ng-click="social.openSocial('http://www.youtube.com/user/lifescripttv')"></a></div>
-			<div class="lifescript-ig" ng-click="social.openSocial('http://instagram.com/lifescript')"></a></div>
-			<div class="lifescript-blog" ng-click="social.openSocial('http://healthbistro.lifescript.com/')"></a></div>
-		</div>
+		<social-directive></social-directive>
 
 		<script type="text/javascript" src="lib/angular.js"></script>
 		<script type="text/javascript" src="lib/ui-bootstrap.js"></script>
 		<script type="text/javascript" src="js/app.js"></script>
-		<script type="text/javascript" src="js/directive/lifescriptDropdown.js"></script>
 		<script type="text/javascript" src="js/services/lifescriptService.js"></script>
 		<script type="text/javascript" src="js/services/feedService.js"></script>
-		<script type="text/javascript" src="js/controllers/socialController.js"></script>
-		<script type="text/javascript" src="js/controllers/burnItOffController.js"></script>
-		<script type="text/javascript" src="js/controllers/totalHealthController.js"></script>
+		<script type="text/javascript" src="js/directives/rssFeedDirective.js"></script>
+		<script type="text/javascript" src="js/directives/socialDirective.js"></script>
+		<script type="text/javascript" src="js/directives/totalHealthDirective.js"></script>
+		<script type="text/javascript" src="js/directives/burnItOffDirective.js"></script>
 	</body>
 </html>

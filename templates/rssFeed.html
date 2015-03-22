@@ -1,0 +1,20 @@
+<div id="rssContainer">
+	<div class="clearfix tools-container">						
+		<div class="dropdown pull-left dropdown-container">
+			<select ng-model="selectedFeed" ng-options="dropdownRssOption.name for dropdownRssOption in rssFeedCtrl.dropdownRssOptions" ng-change="rssFeedCtrl.openSelectFeed(selectedFeed)"></select>
+		</div>
+	</div>
+						
+	<div ng-cloak id="lifescriptFeedRssDiv" class="clearfix" style="width: 600px;">
+		<ol>
+			<li ng-repeat="rssContentInfo in rssFeedCtrl.rssFeedInfo">
+				<div id="feedContainerId{{rssContentInfo.id}}">
+					<span>
+						<a href="javascript:;" class="feedLink" ng-click="rssFeedCtrl.openUrlLink(rssContentInfo.link)">{{rssContentInfo.title}}</a>
+						<span>{{rssFeedCtrl.formatDate(rssContentInfo.publishedDate) |  date:"MM/dd/yyyy" }}</span>
+					</span>
+				</div>
+			</li>
+		</ol>
+	</div>
+</div>
