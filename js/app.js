@@ -20,5 +20,7 @@ var lifescriptApp = angular.module("lifescriptApp", ['ui.bootstrap', 'app.contro
 		};
 	};
 	
-	lifescriptApp.controller("mainController", ['lifescriptService', 'feedService', mainController]);
+	mainController.$inject = ['lifescriptService', 'feedService'];
+	
+	lifescriptApp.controller("mainController", mainController);
 })();

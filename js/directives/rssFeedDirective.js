@@ -35,6 +35,8 @@
 		};
 	};
 	
-	directiveModule.directive('rssDirective', [rssDirective]);
-	controllerModule.controller("rssFeedController", ['feedService', 'lifescriptService', rssFeedController]);
+	rssFeedController.$inject = ['feedService', 'lifescriptService'];
+	
+	directiveModule.directive('rssDirective', rssDirective);
+	controllerModule.controller("rssFeedController", rssFeedController);
 })();

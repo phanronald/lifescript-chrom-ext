@@ -47,7 +47,9 @@
 		};
 	};
 
-	directiveModule.directive('burnItOffDirective', [burnItOffDirective]);
-	controllerModule.controller("burnItOffController", ['feedService', burnItOffController]);
-	filterModule.filter("foodExerciseFilter", [foodExerciseTypeFilter]);	
+	burnItOffController.$inject = ['feedService'];
+	
+	directiveModule.directive('burnItOffDirective', burnItOffDirective);
+	controllerModule.controller("burnItOffController", burnItOffController);
+	filterModule.filter("foodExerciseFilter", foodExerciseTypeFilter);	
 })();

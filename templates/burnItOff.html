@@ -15,7 +15,7 @@
 	</div>
 	<div ng-cloak id="lifescriptBurnItOffExerciseTypeContainer" class="clearfix" style="width: 600px;">
 		<span class="text-right burn-it-off-span">Select Exercise Type: </span>
-		<select class="burn-it-off-dropdown" name="burnItOffExerciseType" ng-model="burnIt.selectedExerciseType" ng-options="exerciseType.name for exerciseType in filtered = (burnIt.burnitoff.exercise_types | foodExerciseFilter:selectedExercise)" required></select>
+		<select class="burn-it-off-dropdown" name="burnItOffExerciseType" ng-model="burnIt.selectedExerciseType" ng-options="exerciseType.name for exerciseType in filtered = (burnIt.burnitoff.exercise_types | foodExerciseFilter:burnIt.selectedExercise)" required></select>
 		<span ng-show="burnItOffForm.burnItOffExerciseType.$dirty && burnItOffForm.burnItOffExerciseType.$invalid">
 			<span ng-show="burnItOffForm.burnItOffExerciseType.$error.required">Please choose an exercise type.</span>
 		</span>

@@ -16,6 +16,6 @@
 		};
 	};
 	
-	directiveModule.directive('socialDirective', [socialDirective]);
-	controllerModule.controller("socialController", [socialController]);
+	directiveModule.directive('socialDirective', socialDirective);
+	controllerModule.controller("socialController", socialController);
 })();

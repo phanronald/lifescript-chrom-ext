@@ -128,7 +128,9 @@
 		};
 	};
 
-	directiveModule.directive('totalHealthDirective', [totalHealthDirective]);
-	controllerModule.controller("totalHealthController", ['feedService', totalHealthController]);
+	totalHealthController.$inject = ['feedService'];
+	
+	directiveModule.directive('totalHealthDirective', totalHealthDirective);
+	controllerModule.controller("totalHealthController", totalHealthController);
 	filterModule.filter("rangeFilter", [rangeFilter]);
 })();
