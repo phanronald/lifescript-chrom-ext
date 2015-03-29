@@ -37,5 +37,7 @@
 		
 	};
 	
-	serviceModule.service("lifescriptService", ['$http', lifescriptService]);
+	lifescriptService.$inject = ['$http'];
+	
+	serviceModule.service("lifescriptService", lifescriptService);
 })();

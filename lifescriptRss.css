@@ -46,4 +46,7 @@ div.lifescript-blog { background-position: -138px 0px; width: 18px; height:18px;
 .total-health-calc-result { margin: 30px 0 0 20px; }
 .total-health-calc-info { padding: 0 0 0 20px; }
 
-.burn-it-off-btn:disabled, .calculate-fitness-btn:disabled { color: #999; }
+.unsubscribe-container { text-align: center; margin: 20px 0 0 0; }
+.unsubscribe-span { display: inline-block; width: 150px; }
+
+.burn-it-off-btn:disabled, .calculate-fitness-btn:disabled, .unsubscribte-btn:disabled { color: #999; }

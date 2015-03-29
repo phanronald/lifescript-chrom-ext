@@ -19,13 +19,24 @@
 			return deferFeed.promise;
 		};
 		
+		var unsubscribeLifescript = function(userEmail) {
+			$http({
+				method: 'POST',
+				url: 'http://nightmareraven.apphb.com/api/lifescript/UnSubscribeFromLifescript',
+				params: { email: userEmail }
+			});
+		};
+		
 		return {
 			init: init,
 			retrieveFeed: retrieveFeed,
-			retrieveJsonFromFile: retrieveJsonFromFile
+			retrieveJsonFromFile: retrieveJsonFromFile,
+			unsubscribeLifescript: unsubscribeLifescript
 		};
 		
 	};
 	
-	serviceModule.service("feedService", ['$http', '$q', '$rootScope', feedService]);
+	feedService.$inject = ['$http', '$q', '$rootScope'];
+	
+	serviceModule.service("feedService", feedService);
 })();

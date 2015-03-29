@@ -1,0 +1,13 @@
+<div ng-form="unsubscribeForm" novalidate ng-cloak>
+	<div ng-cloak id="unsubscribeFormContainer" class="clearfix tools-container" style="width: 600px;">
+		<span class="text-right unsubscribe-span">Email: </span>
+		<input type="email" ng-model="unsubCtrl.emailAddress" name="unsubEmailAddress" required />
+		<span ng-show="unsubscribeForm.unsubEmailAddress.$dirty && unsubscribeForm.unsubEmailAddress.$invalid">
+			<span ng-show="unsubscribeForm.unsubEmailAddress.$error.email">Please enter an email address.</span>
+		</span>
+	</div>
+	
+	<div class="unsubscribe-container">
+		<button id="unsubscribeBtn" class="unsubscribte-btn" ng-click="unsubCtrl.unsubscribe()" ng-disabled="unsubscribeForm.$invalid">Unsubscribe</button>
+	</div>
+</div>
