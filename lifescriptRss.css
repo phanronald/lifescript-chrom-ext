@@ -46,7 +46,13 @@ div.lifescript-blog { background-position: -138px 0px; width: 18px; height:18px;
 .total-health-calc-result { margin: 30px 0 0 20px; }
 .total-health-calc-info { padding: 0 0 0 20px; }
 
+.sub-unsub-container { margin-bottom: 20px; }
+.subscribe-or-unsubscribe-radio-label { display: inline-block; width: 110px; text-align: right; }
 .unsubscribe-container { text-align: center; margin: 20px 0 0 0; }
-.unsubscribe-span { display: inline-block; width: 150px; }
+.subscribe-container { padding-left: 50px; }
+.email-container { padding: 0 0 20px 50px; }
+.unsubscribe-label { display: inline-block; width: 180px; font-weight: normal; }
+.unsubscribe-label input[type="checkbox"] { margin-right: 5px; }
+.sub-unsub-msg { color: red; padding: 20px 0 0 50px; }
 
 .burn-it-off-btn:disabled, .calculate-fitness-btn:disabled, .unsubscribte-btn:disabled { color: #999; }

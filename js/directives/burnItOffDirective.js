@@ -23,8 +23,8 @@
 		burnItOffVM.burnItOffCalc = function() {			
 			var calories = burnItOffVM.selectedFood.value;
 			var metabolicEquivalentTask = burnItOffVM.selectedExerciseType.value;
-			
-			burnItOffVM.minutesToBurnOffFood = Math.round(calories / (metabolicEquivalentTask * 3.5 * (burnItOffVM.selectedWeight / 2.2) / 200) * 10) / 10 + " minutes of " +
+			var correctWeight = parseInt(burnItOffVM.selectedWeight, 10);
+			burnItOffVM.minutesToBurnOffFood = Math.round(calories / (metabolicEquivalentTask * 3.5 * (burnItOffVM.correctWeight / 2.2) / 200) * 10) / 10 + " minutes of " +
 				burnItOffVM.selectedExerciseType.name + " will burn off an " + burnItOffVM.selectedFood.name;
 		};
 	};

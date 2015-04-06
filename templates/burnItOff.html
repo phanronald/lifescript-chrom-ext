@@ -22,7 +22,7 @@
 	</div>
 	<div ng-cloak id="lifescriptBurnItOffWeight" class="clearfix" style="width: 600px;" >
 		<span class="text-right burn-it-off-span">Weight: </span>
-		<input type="text" ng-model="burnIt.selectedWeight" name="burnItOffWeight" required />
+		<input type="text" ng-model="burnIt.selectedWeight" name="burnItOffWeight" ng-pattern="/^[0-9]{1,3}$/" required />
 		<span ng-show="burnItOffForm.burnItOffWeight.$dirty && burnItOffForm.burnItOffWeight.$invalid">
 			<span ng-show="burnItOffForm.burnItOffWeight.$error.required">Please enter in a weight.</span>
 		</span>

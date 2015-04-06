@@ -20,10 +20,22 @@
 		};
 		
 		var unsubscribeLifescript = function(userEmail) {
-			$http({
-				method: 'POST',
+			return $http({
+				method: 'GET',
 				url: 'http://nightmareraven.apphb.com/api/lifescript/UnSubscribeFromLifescript',
 				params: { email: userEmail }
+			}).then(function(response) {
+				return response;
+			});
+		};
+		
+		var subscribeLifescript = function(userEmail, selectedSubcription) {
+			return $http({
+				method: 'POST',
+				url: 'http://nightmareraven.apphb.com/api/lifescript/SubscribeToLifescript',
+				data: JSON.stringify({"Email": userEmail, "Subscriptions": selectedSubcription})
+			}).then(function(response) {
+				return response;
 			});
 		};
 		
@@ -31,7 +43,8 @@
 			init: init,
 			retrieveFeed: retrieveFeed,
 			retrieveJsonFromFile: retrieveJsonFromFile,
-			unsubscribeLifescript: unsubscribeLifescript
+			unsubscribeLifescript: unsubscribeLifescript,
+			subscribeLifescript: subscribeLifescript
 		};
 		
 	};

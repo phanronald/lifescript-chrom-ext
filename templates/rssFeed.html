@@ -10,7 +10,7 @@
 			<li ng-repeat="rssContentInfo in rssFeedCtrl.rssFeedInfo">
 				<div id="feedContainerId{{rssContentInfo.id}}">
 					<span>
-						<a href="javascript:;" class="feedLink" ng-click="rssFeedCtrl.openUrlLink(rssContentInfo.link)">{{rssContentInfo.title}}</a>
+						<a href="javascript:;" class="feedLink" ng-click="rssFeedCtrl.openUrlLink(rssContentInfo.link)" ng-bind-html="rssContentInfo.title"></a>
 						<span>{{rssFeedCtrl.formatDate(rssContentInfo.publishedDate) |  date:"MM/dd/yyyy" }}</span>
 					</span>
 				</div>

@@ -1,13 +1,32 @@
 <div ng-form="unsubscribeForm" novalidate ng-cloak>
-	<div ng-cloak id="unsubscribeFormContainer" class="clearfix tools-container" style="width: 600px;">
+	<div ng-cloak id="subscribeOrUnscribeContainer" class="clearfix tools-container" style="width: 600px;">
+		<div class="sub-unsub-container">
+			<span class="subscribe-or-unsubscribe-radio-label">Choose: </span>
+			<input type="radio" ng-model="unsubCtrl.subChoice" value="sub" ng-change="unsubCtrl.clearAll()"><span>Subscribe</span>
+			<input type="radio" ng-model="unsubCtrl.subChoice" value="unsub" ng-change="unsubCtrl.clearAll()"><span>Unsubscribe All</span>
+		</div>
+	</div>
+	<div ng-cloak id="unsubscribeFormContainer" class="clearfix tools-container email-container" ng-show="unsubCtrl.subChoice != null">
 		<span class="text-right unsubscribe-span">Email: </span>
-		<input type="email" ng-model="unsubCtrl.emailAddress" name="unsubEmailAddress" required />
+		<input type="email" ng-model="unsubCtrl.emailAddress" name="unsubEmailAddress" ng-pattern="/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/" required />
 		<span ng-show="unsubscribeForm.unsubEmailAddress.$dirty && unsubscribeForm.unsubEmailAddress.$invalid">
 			<span ng-show="unsubscribeForm.unsubEmailAddress.$error.email">Please enter an email address.</span>
 		</span>
 	</div>
 	
+	<div ng-cloak id="subscribeFormContainer" class="subscribe-container" ng-show="unsubCtrl.subChoice=='sub'">
+		<label class="unsubscribe-label" ng-repeat="subOption in unsubCtrl.subOptions">
+			<input type="checkbox" value="{{subOption.value}}" ng-checked="unsubCtrl.selectedSubcription.indexOf(subOption.value) > -1" 
+				ng-click="unsubCtrl.toggleSubscription(subOption.value)">{{subOption.name}}
+		</label>
+	</div>
+	
 	<div class="unsubscribe-container">
-		<button id="unsubscribeBtn" class="unsubscribte-btn" ng-click="unsubCtrl.unsubscribe()" ng-disabled="unsubscribeForm.$invalid">Unsubscribe</button>
+		<button id="unsubscribeBtn" class="unsubscribte-btn" ng-click="unsubCtrl.unsubscribe()" ng-disabled="unsubscribeForm.$invalid" ng-show="unsubCtrl.subChoice=='unsub'">Unsubscribe</button>
+		<button id="subscribeBtn" class="unsubscribte-btn" ng-click="unsubCtrl.subscribe()" ng-disabled="unsubscribeForm.$invalid" ng-show="unsubCtrl.subChoice=='sub'">Subscribe</button>
+	</div>
+	
+	<div class="sub-unsub-msg">
+		{{unsubCtrl.successProcess}}
 	</div>
 </div>
