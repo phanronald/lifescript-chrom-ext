@@ -2,7 +2,7 @@
   "name": "Lifescript Social Tools",
   "manifest_version": 2,
   "description": "Lifescript News and Tools",
-  "version" : "1.5",
+  "version" : "2.0",
   "browser_action": {
     "default_icon": "lifescript.png",
 	"default_title": "Lifescript Feed",

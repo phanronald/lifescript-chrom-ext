@@ -24,11 +24,6 @@
 		"id": "5",
         "url": "http://feeds.feedblitz.com/LifescriptHealthBistro",
         "name": "Health Bistro Blog"
-    },
-    {
-		"id": "6",
-        "url": "https://gdata.youtube.com/feeds/api/users/lifescripttv/uploads?v=2&amp;alt=jsonc&amp;max-results=10",
-        "name": "Lifescript Youtube TV"
     }
   ]
 }

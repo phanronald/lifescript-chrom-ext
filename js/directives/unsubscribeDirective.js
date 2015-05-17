@@ -27,28 +27,6 @@
 			}
 		};
 		
-		unsubVM.unsubscribe = function() {
-			feedService.unsubscribeLifescript(unsubVM.emailAddress).then(function(data) {
-				if(data.data == 200) {
-					unsubVM.successProcess = 'You have been unsubscribed from Lifescript.';
-				}
-				else {
-					unsubVM.successProcess = 'There was an issue with the unsubscription process.';
-				}
-			});
-		};
-		
-		unsubVM.subscribe = function() {
-			feedService.subscribeLifescript(unsubVM.emailAddress, unsubVM.selectedSubcription).then(function(data) {
-				if(data.data == 200) {
-					unsubVM.successProcess = 'You have subscribed to Lifescript.';
-				}
-				else {
-					unsubVM.successProcess = 'There was an issue with the subscription process.';
-				}
-			});
-		};
-		
 		unsubVM.clearAll = function() {
 			unsubVM.successUnsub = [];
 			unsubVM.successProcess = '';
